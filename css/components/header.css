@@ -1,0 +1,222 @@
+.section--header-menu {
+	position: fixed;
+	z-index: 999;
+}
+
+.header-menu-wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+
+.brand-img, .brand {
+	z-index: 999;
+}
+
+.header-menu__mobile-icon {
+	display: none;
+	width: 21px;
+	border-bottom: 1px solid #fff;
+	position: absolute;
+	bottom: 11px;
+	right: 0;
+	z-index: 999;
+}
+
+.header-menu__mobile-icon:before {
+	content: "";
+	position: absolute;
+	width: 16px;
+	border-bottom: 1px solid #fff;
+	bottom: 6px;
+	right: 0;
+}
+
+.header-menu__mobile-icon:after {
+	content: "";
+	position: absolute;
+	width: 21px;
+	border-bottom: 1px solid #fff;
+	bottom: 13px;
+	right: 0;
+}
+
+.header-menu__mobile__checkbox {
+	display: none;
+	width: 22px;
+    height: 22px;
+    position: absolute;
+    right: 0;
+    bottom: 8px;
+}
+
+.header-menu__list-item {
+	padding-left: 40px;
+}
+
+.header-menu__list .header-menu__list-item:first-child {
+	padding-left: 0;
+}
+
+.header-menu__list-link {
+	letter-spacing: 0.05em;
+}
+
+.brand-img {
+	width: unset;
+}
+
+.header {
+	display: flex;
+	align-items: flex-end;
+	min-height: 840px;
+	background-image: url(../../img/header_bg.jpg);
+}
+
+.header:before {
+	background: linear-gradient(180deg, #242B33 11.98%, rgba(45, 52, 60, 0.38) 51.04%, #242B33 92.19%);
+}
+
+.header__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	max-width: 582px;
+	min-height: 470px;
+	margin: auto;
+	position: relative;
+}
+
+.header__content__mouse {
+	position: absolute;
+	top: 210px;
+	left: 50%;
+	width: 40px;
+	transform: translateY(-50%);
+	animation: bouncing 0.9s cubic-bezier(0.1,0.25,0.1,1) 0s infinite alternate both;
+}
+
+@keyframes bouncing {
+	from { transform: translateY(-10px); }
+	to { transform: translateY(10px); }
+}
+
+.header__content__contacts {
+	width: 100%;
+}
+
+.header__contacts__item__link {
+	display: flex;
+	align-items: center;
+}
+
+.header__contacts__item-tel .header__contacts__item__link {
+	justify-content: flex-end;
+}
+
+.header__contacts__item__title {
+	padding-left: 15px;
+	font-size: 18px;
+	line-height: 21px;
+}
+
+.header__contacts__item [class*="icon-"] {
+	font-size: 21px;
+}
+
+@media (max-width:  767px) {
+	.header__content__mouse {
+		display: none;
+	}
+
+	.header-menu__mobile-icon {
+		display: block;
+	}
+
+	.header-menu__mobile__checkbox:checked~.header-menu__list{
+		visibility: visible;
+	    top: 0;
+	    opacity: 1;
+	    transition: .4s ease-out;
+	}
+
+	.header-menu__mobile__checkbox:checked~.header-menu__mobile-icon:before{
+		display: none;
+	}
+
+	.header-menu__mobile__checkbox:checked~.header-menu__mobile-icon {
+		transform: rotate(45deg);
+		bottom: 17px;
+		transition: .4s ease-out;
+	}
+
+	.header-menu__mobile__checkbox:checked~.header-menu__mobile-icon:after {
+		transform: rotate(90deg);
+		right: 0;
+		bottom: 0;
+		transition: .4s ease-out;
+	}
+
+	.header-menu__list {
+		visibility: hidden;
+		opacity: 0;
+		position: fixed;
+		width: 100%;
+		left: 50%;
+	    transform: translateX(-50%);
+	    top: -999px;
+	    height: 343px;
+	    padding-top: 108px;
+	    background: #242B33;
+	    box-shadow: 0px 14px 14px rgb(0 0 0 / 36%);
+	}
+
+	.header-menu__list-item {
+		display: block;
+		padding-left: 0;
+		padding-bottom: 20px;
+		font-size: 20px;
+		line-height: 23px;
+		text-align: center;
+		letter-spacing: 0.05em;
+	}
+
+	.header-menu-wrap .brand-img {
+		width: 100px;
+		height: 38px;
+	}
+}
+
+@media (max-width: 575px) {
+
+	.header__contacts__item .header__contacts__item__link {
+		justify-content: center;
+	}
+
+	.header__contacts__item-tel {
+		padding-bottom: 15px;
+	}
+
+	.header {
+		background-image: url(../../img/header_bg_mob.jpg);
+	}
+
+	.header:before {
+	    background: linear-gradient(180deg, #242B33 11.98%, rgba(45, 52, 60, 0.38) 51.04%, #242B33 92.19%), 
+	    linear-gradient(0deg, rgba(36, 43, 51, 0.78), rgba(36, 43, 51, 0.78));
+	}
+}
+
+@media (max-width: 425px) {
+
+	.header {
+		min-height: 435px;
+	}
+
+	.header__content {
+		min-height: 231px;
+	}
+}
